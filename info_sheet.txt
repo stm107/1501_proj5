@@ -6,19 +6,22 @@ You must submit an information sheet with every assignment.  Also be sure
 to submit all materials following the procedures described on the
 submission procedures page.
 
-Name:  
+Name:  Sean Mizerski
 
-Lecture section:  
+Lecture section:  MW 9:30-10:45 (W)
 
-Recitation day and time:  
+Recitation day and time:  Friday 10:00-10:50
 
-Assignment #:  
+Assignment #: 5
 
-Program due date:  
+Program due date: 4/23/19
 
-Handed in date:  
+Handed in date:  4/23/19
 
 Source code file name(s):
+LargeInteger.java
+RsaKeyGen.java
+RsaSign.java
 
 
 
@@ -27,14 +30,14 @@ Source code file name(s):
 
 
 Other file name(s) (if relevant):
+LargeIntegerTest.java
 
 
 
 
 
 
-
-Does your program run without error?:
+Does your program run without error?: Yes
 
 If not, what is/are the error(s) and which parts of your program run
 correctly?:
@@ -45,8 +48,18 @@ correctly?:
 
 
 
-Additional comments to the grader:
 
+Additional comments to the grader:
+I separated my code into the functions that Dr. Farnan asked for above and any helper functions below.
+They are labeled and heavily commented.
+
+I wrote a test driver called LargeIntegerTest.java that performs all of the operations required by the assignemnt.
+It then does the same calculation with the BigInteger class and compares the result.
+NOTE: I did NOT use BigInteger to create any parts of LargeInteger, just to test :).
+
+I have run into on a small unlucky occasion, the scenario when the randomly generated e is repeatedly greater than phi_n.
+A new e then generated, and if it is also greater than phi_n, then it just keeps generating new e until it gets one that works.
+This has, once or twice, taken a while. It usually doesn't happen though.
 
 
 
