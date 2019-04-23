@@ -29,12 +29,12 @@ public class RsaKeyGen {
         n = p.multiply(q);
         System.out.println("Calculated n successfully!");
 
-        //Calculate φ(n) as (p-1)*(q-1)
+        //Calculate phi
         System.out.println("Calculating phi_n as (p-1)*(q-1)...");
         phi_n = (p.subtract(one)).multiply((q.subtract(one)));
         System.out.println("Calculated phi_n successfully!");
 
-        //Choose an e such that 1 < e < φ(n) and gcd(e, φ(n)) = 1 (e must not share a factor with φ(n))
+        //Choose an e
         System.out.println("Finding e...");
         e = new LargeInteger(512, r);
         while (!valid_e()) {
@@ -42,7 +42,7 @@ public class RsaKeyGen {
         }
         System.out.println("Found valid e successfully!");
 
-        //Determine d such that d = e⁻¹ mod φ(n)
+        //Determine d
         System.out.println("Calculating d...");
         LargeInteger d = e.modularExp(one.negate(), phi_n);
         System.out.println("Calculated d successfully!");
