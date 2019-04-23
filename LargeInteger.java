@@ -212,13 +212,11 @@ public class LargeInteger {
 
         // start from the little end!
         for (int i = b.length() - 1; i >= 0; i--) {
-            byte curr_byte = b.getVal()[i];
             // 8 bits in a byte!
             for (int j = 0; j < 8; j++) {
                 // get the bit value that we're multiplying by
-                int curr_bit = (curr_byte >> j) & 1;
                 // if it's a 1, add and shift
-                if (curr_bit == 1) {
+                if ((b.getVal()[i] >> j & 1) == 1) {
                     result = result.add(a);
                     a = a.shift_left();
                 }

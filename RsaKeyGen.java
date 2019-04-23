@@ -59,7 +59,7 @@ public class RsaKeyGen {
 
     private static boolean valid_e() {
         // e is greater than phi
-        if (phi_n.subtract(e).isNegative()) {
+        if (phi_n.subtract(e).isNegative() || e.equals(phi_n)) {
             System.out.println("Randomly generated e is not less than phi_n...");
             return false;
         }
